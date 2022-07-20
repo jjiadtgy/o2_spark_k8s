@@ -17,6 +17,11 @@ minikube start --cpus 4 --memory 8192
 - Namespace means sub-cluster of the whole cluster
 
 
+[Service account explained](https://medium.com/the-programmer/working-with-service-account-in-kubernetes-df129cb4d1cc)
+
+- It's used to authenticate pods to access Kubernetes cluster
+
+
 # First Spark interaction on Minikube
 
 [Spark Kube](https://jaceklaskowski.github.io/spark-kubernetes-book/demo/spark-shell-on-minikube/)
