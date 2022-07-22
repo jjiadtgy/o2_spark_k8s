@@ -82,6 +82,8 @@
 
 ![img_2.png](img_2.png)
 
+[Example of scenario](https://www.youtube.com/watch?v=PH-2FfFD2PU)
+
 
 # Services in details
 
@@ -97,9 +99,14 @@
 
 - Headless service => ClusterIP to None and you can directly talk to each pods with Pods DNS
 - NodePort => It's port directly opened to cluster outside on each Node and target pods
+  - Do not use for prod
 
 ![img_9.png](img_9.png)
 
-- LoadBalancer => A single address for all forwarding all traffic to your service
+- LoadBalancer => A single address for all forwarding external traffic to your service
+  - Used for prod
+  - Only if Cloud provider available
+  - Alternative can be Ingress
 
 ![img_10.png](img_10.png)
+
