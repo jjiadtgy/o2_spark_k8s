@@ -96,5 +96,10 @@
 ![img_8.png](img_8.png)
 
 - Headless service => ClusterIP to None and you can directly talk to each pods with Pods DNS
-- NodePort => It's port directly opened on a Node
+- NodePort => It's port directly opened to cluster outside on each Node and target pods
+
+![img_9.png](img_9.png)
+
 - LoadBalancer => A single address for all forwarding all traffic to your service
+
+![img_10.png](img_10.png)
