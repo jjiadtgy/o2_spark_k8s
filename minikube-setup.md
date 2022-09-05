@@ -3,7 +3,7 @@
 [Install on MacOS](https://minikube.sigs.k8s.io/docs/start/)
 
 ```shell
-minikube start --cpus 4 --memory 8192 
+minikube start --cpus 4 --memory 8192
 ```
 
 
