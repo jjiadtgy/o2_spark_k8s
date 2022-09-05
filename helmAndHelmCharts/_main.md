@@ -21,7 +21,7 @@
 
 ![img_3.png](img_3.png)
 
-- The following command will produce valid Kubernetes MANIFEST yaml files (deployable on Kuberentes)
+- The following command will produce valid Kubernetes MANIFEST yaml files (deployable on Kubernetes)
 
 ```shell
 helm install <chartname>
