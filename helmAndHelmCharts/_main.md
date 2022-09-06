@@ -11,8 +11,8 @@
 # Templating Engine in Helm
 
 - Templating in case for multiple similar microservices but differences are only on certain values
-- Blueprint 👈 Containing the dynamic values
-- YAML file with dynamic values templated
+- Blueprint 👈 Containing the dynamic values inside the `values.yaml` file
+- YAML file with dynamic values templated inside the `templates` folder
 
 ![img_2.png](img_2.png)
 
@@ -24,7 +24,7 @@
 - The following command will produce valid Kubernetes MANIFEST yaml files (deployable on Kubernetes)
 
 ```shell
-helm install <chartname>
+helm install <helmDeployName> <chartName>
 ```
 
 

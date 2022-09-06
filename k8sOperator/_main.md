@@ -18,7 +18,7 @@
 
 # Where are & Who manage the operators ?
 
-- Operator are managed by the technology used contributors because they know the specifics
+- Operator are managed by the technology used contributors because they know the business logic
 - Open source operators on [Operator Hub](https://operatorhub.io/)
 
 ![img_3.png](img_3.png)

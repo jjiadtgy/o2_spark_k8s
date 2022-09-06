@@ -1,0 +1,33 @@
+apiVersion: "sparkoperator.K8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: spark-apps
+  labels:
+    app: spark
+spec:
+  type: Scala
+  mode: cluster
+  image: "gcr.io/spark-operator/spark:v3.1.1"
+  imagePullPolicy: Always
+  mainClass: org.apache.spark.examples.SparkPi
+  mainApplicationFile: "local:///opt/spark/examples/jars/spark-examples_2.12-3.1.1.jar"
+  arguments:
+    - "100000"
+  sparkVersion: "3.1.1"
+  restartPolicy:
+    type: Never
+  driver:
+    cores: 1
+    coreLimit: "1200m"
+    memory: "512m"
+    labels:
+      version: 3.1.1
+      app: spark
+    serviceAccount: my-release-spark #TODO: Update service account to match service account in spark-everywhere namespace
+  executor:
+    cores: 1
+    instances: 1
+    memory: "512m"
+    labels:
+      version: 3.1.1
+      app: spark
