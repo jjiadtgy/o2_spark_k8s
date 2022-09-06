@@ -2,12 +2,11 @@
 
 - Role based access control, it involves
   - `User` or `Service account`
-    - the first is used for connection from external (actual user)
-    - the second is used internally between pods
-    - they both lived in a namespace level
+    - the first is used for connection from external (actual user from external PC)
+    - the second is used internally between pods (lived in a namespace level)
   - `Role` & `RoleBinding`
-    - the first is to define authorization at the namespace level
-    - the second is to link a `Role` to a `User` or `Service account` at the namespace level
+    - the first is to define authorization at a namespace level
+    - the second is to link a `Role` to a `User` or `Service account` at a namespace level
   - `ClusterRole` & `ClusterRoleBinding`
     - both idem but at a cluster level (between namespaces)
 
@@ -77,7 +76,7 @@
 
 ![img_15.png](img_15.png)
 
-- Then Pods can use this identity `ServiceAccount` to 
+- Then Pods can use this identity `ServiceAccount` to manage Kubernetes resources 
 
 ![img_16.png](img_16.png)
 
@@ -86,7 +85,7 @@
 
 ![img_18.png](img_18.png)
 
-- For the `ServiceAccount` (≈ Our external user) we need to define `Role` & `RoleBinding`
+- For the `ServiceAccount` (≈ Our external user) we also need to define `Role` & `RoleBinding`
 
 | Role to create            | Role binding to create    |
 |---------------------------|---------------------------|
