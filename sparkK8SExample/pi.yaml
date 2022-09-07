@@ -1,7 +1,7 @@
-apiVersion: "sparkoperator.K8s.io/v1beta2"
+apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
-  name: spark-apps
+  name: spark-pi
   labels:
     app: spark
 spec:
@@ -12,7 +12,7 @@ spec:
   mainClass: org.apache.spark.examples.SparkPi
   mainApplicationFile: "local:///opt/spark/examples/jars/spark-examples_2.12-3.1.1.jar"
   arguments:
-    - "100000"
+    - "50"
   sparkVersion: "3.1.1"
   restartPolicy:
     type: Never
@@ -23,7 +23,7 @@ spec:
     labels:
       version: 3.1.1
       app: spark
-    serviceAccount: my-release-spark #TODO: Update service account to match service account in spark-everywhere namespace
+    serviceAccount: myrelease-spark
   executor:
     cores: 1
     instances: 1
