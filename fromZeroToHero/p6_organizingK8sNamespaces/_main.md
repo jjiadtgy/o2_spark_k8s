@@ -39,7 +39,7 @@
 ![img_3.png](img_3.png)
 
 
-# Namespace"d" resources or not
+# Namespaced resources or not
 
 - `ConfigMap`, `Secret`, `Role` and `RoleBinding` are namespace"d"
   - It means they cannot be used between namespaces
@@ -48,8 +48,8 @@
 
 ![img_4.png](img_4.png)
 
-- `Volumne` and `Node` are not namespace"d"
+- `Volumne` and `Node` are not namespaced
 
-- To list all resources according if namespace"d" or not
+- To list all resources according if namespaced or not
   - `kubectl api-resources --namespaced=false`
   - `kubectl api-resources --namespaced=true`
