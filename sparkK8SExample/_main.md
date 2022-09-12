@@ -10,8 +10,7 @@ minikube start --cpus 4 --memory 8192
 ```shell
 kubectl create namespace spark-appns
 kubectl config set-context --current --namespace spark-appns
-helm install myrelease spark-operator/spark-operator --namespace spark-opns --create-namespace --set sparkJobNamespace=spark-appns
-kubectl apply -f /Users/jamesjiang/IdeaProjects/o2_spark_k8s/sparkK8SExample/pi.yaml -n spark-appns
-
+helm install myrelease spark-operator/spark-operator --namespace james-spark-opns --create-namespace --set sparkJobNamespace=james-spark-appns
+kubectl apply -f /Users/jamesjiang/IdeaProjects/o2_spark_k8s/sparkK8SExample/pi.yaml
 minikube delete --all
 ```
