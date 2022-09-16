@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-dep
+  labels:
+    app: mongo-app
+spec:
+  serviceName: "mbdservice"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mongo-app
+  template:
+    metadata:
+      labels:
+        app: mongo-app
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:5.0.9
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mypvc
+              mountPath: "/data/db" # <- where the data is stored
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret # <- reference to an already deployed secret
+                  key: mongo-root-username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret # <- reference to an already deployed secret
+                  key: mongo-root-password
+  volumeClaimTemplates:
+    - metadata:
+        name: mypvc
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: csi-cinder-classic
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+spec:
+  selector:
+    app: mongo-app # <- The same label as for the pod
+  ports:
+    - protocol: TCP
+      port: 27017 # <- Service port
+      targetPort: 27017 # <- Container port

@@ -1,7 +1,7 @@
 apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
-  name: spark-pi3
+  name: spark-pi6
   namespace: james-spark-appns
   labels:
     app: spark

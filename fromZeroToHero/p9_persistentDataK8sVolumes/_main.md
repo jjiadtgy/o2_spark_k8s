@@ -14,7 +14,7 @@
 # Persistent volume
 
 - The actual physical storage can be on
-  - Kubernetes local storage on nodes `HostPath` (BAD PRACTICE)
+  - Kubernetes local storage on nodes (BAD PRACTICE)
   - Other object storage S3, DBs, etc...
   - Or NFS
 
