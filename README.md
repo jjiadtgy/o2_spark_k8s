@@ -11,3 +11,4 @@
 - [What is Helm in Kubernetes? Helm and Helm Charts explained | Kubernetes Tutorial 23](https://www.youtube.com/watch?v=-ykwb1d0DXU)
 - [Kubernetes Operator simply explained in 10 mins](https://www.youtube.com/watch?v=ha3LjlD6g7g)
 - [Understanding Kubernetes RBAC | Access control basics explained](https://www.youtube.com/watch?v=jvhKOAyD8S8)
+- [Setting Resource Requests and Limits in Kubernetes](https://www.youtube.com/watch?v=xjpHggHKm78)

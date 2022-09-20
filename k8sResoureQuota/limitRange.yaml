@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: demo
+  namespace: james-testing-rq
+spec:
+  limits:
+    - default: # <- Default `limits` for all containers if not specified
+        cpu: 600
+        memory: 100Mi
+      defaultRequest: # <- Default `requests` for all containers if not specified
+        cpu: 100
+        memory: 50Mi
+      max: # <- Maximum `limits` for containers
+        cpu: 1000
+        memory: 200Mi
+      min: # <- Minimum `limits` for containers
+        cpu: 10
+        memory: 10Mi
+      type: Container
